@@ -12,7 +12,7 @@ WARNINGS = sys.stderr # open("transliteration-warnings.txt", "w")
 
 # Add everything here that you want to allow to pass through without
 # transliteration
-IGNORE_CHARS = {".", ",", "-", "?"}
+IGNORE_CHARS = {".", ",", "-", "?", "="}
 
 def main():
     global fail
@@ -163,7 +163,10 @@ def to_cyrillic(s):
 
         # GLOTTAL STOP
         if char == "ʔ":
-            assert next_char in IPA_VOWELS
+            try:
+                assert next_char in IPA_VOWELS
+            except AssertionError:
+                fail(s)
             if prev_char in IPA_VOWELS or prev_char is None:
                 # do nothing yet: write apostrophe after next char
                 append_apostrophe = True
@@ -213,7 +216,7 @@ def to_cyrillic(s):
 
         # PUNCTUATION and WHATNOT
         elif char in IGNORE_CHARS:
-            results.append(char)
+            result.append(char)
 
         else:
             fail(s)
