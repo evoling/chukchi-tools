@@ -461,7 +461,7 @@ class ToIPA(unittest.TestCase, BaseOrthographyTest):
 
     def test_redundant_jotated_vowels(self):
         data = [ 
-            ("мылячX", "məlac"),
+            ("мыляч", "məlac"),
             ("мэлёталгын", "melotalɣən"),
             ("вывчелкалгын", "wəwcelkalɣən"),
             ("вилюптын", "wiluptən")]
