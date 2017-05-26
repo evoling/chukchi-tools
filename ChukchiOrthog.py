@@ -100,7 +100,7 @@ ALTERNATE_ORTHOG = { # for normalisation
         }
 
 def reverse_dict(D):
-    return dict(zip(D.values(), D.keys()))
+    return {v: k for k, v in D.items()}
 
 IPA_JOTATED_VOWELS = reverse_dict(JOTATED_VOWELS)
 IPA_UNJOTATED_VOWELS = reverse_dict(UNJOTATED_VOWELS)
