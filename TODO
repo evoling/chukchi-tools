@@ -1,0 +1,11 @@
+- Add an option about what to do when a form can't be transliterated according
+  to the rules (e.g.  loan morphemes): fail, return word untransliterated,
+  return word flagged somehow
+  --fail-policy {error|pass|tag}
+- collapse IPA with morpheme breaks and possible spaces to whole Cyrillic words
+  --collapse
+- Spellchecker mode. Return forms which are not well-formed Chukchi words
+  according to the transliteration style
+- Handle Cyrillic typewriter conventions, both к' and к", н' and н" etc. (I
+  think we want to handle this silently, but we only need to return normalized
+  modern Cyrillic)
