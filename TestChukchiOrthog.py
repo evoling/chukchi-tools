@@ -455,6 +455,10 @@ class ToIPA(unittest.TestCase, BaseOrthographyTest):
         data = [("қораӊы", "ӄораӈы")]
         self.assertEqualPairs(data, ChukchiOrthog.normalise)
 
+    def test_normalise_typewriter_style(self):
+        data = [("к'оран'ы", "ӄораӈы")]
+        self.assertEqualPairs(data, ChukchiOrthog.normalise)
+
     def test_simple_substitution(self):
         data = [("нэрӄуӄ", "nerquq"), ("эмнуӈ", "emnuŋ"), ("ӄача", "qaca")]
         self.assertEqualPairs(data, ChukchiOrthog.to_ipa)

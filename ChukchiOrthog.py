@@ -97,6 +97,9 @@ ALTERNATE_ORTHOG = { # for normalisation
         "ӆ":"ԓ",
         "л":"ԓ",
         "’":"'",
+        "к'":"ӄ",
+        "н'":"ӈ"
+        # "л'":"ԓ" # this shouldn't occur for historical reasons
         }
 
 def reverse_dict(D):
